@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
+:root {
+  --accent:#993abc;
+  --bg:#030617;
+}
+
 body {
-  background-color: #0b0c15;
+  background-color: var(--bg);
   /* provisional height change to main, only for testing button func */
   height: 3000px;
 }
@@ -19,7 +24,24 @@ main {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #1f1121;
+  background-color: var(--accent);
+  box-shadow: 0.01em 3em 2em var(--bg);
+}
+
+.blogmenu {
+  display: none;
+  position: fixed;
+  z-index: 99;
+}
+
+.blogmenu ul {
+  list-style-type: none;
+}
+
+.blogmenu ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 2em;
 }
 
 .intro {
@@ -40,38 +62,48 @@ main {
 .topnav ul li {
   float: left;
   padding: 1.5em;
-  color: white;
   font-size: 1.5em;
   font-family: "JetBrains Mono", monospace;
 }
 
 .topnav ul li a {
-  color: white;
   text-decoration: none;
+  color: white;
+}
+
+.topnav ul li button {
+  color: white;
+  font-size: 1em;
+  font-family: "JetBrains Mono", monospace;
+  border: none;
+  background-color: transparent;
+}
+
+.topnav ul li button:hover {
+  text-decoration: underline;
 }
 
 .topnav ul li a:hover {
   text-decoration: underline;
 }
 
-.btn-flotante {
+.backtotop {
   font-size: 3.5em;
   text-decoration: none;
   color: white;
-  background-color: #1f1121;
+  background-color: var(--accent);
   border-radius: 100px;
   padding: 0.3em;
   position: fixed;
   bottom: 0.5em;
   right: 0.5em;
   transition: all 299ms ease 0ms;
-  box-shadow: -1px 8px 15px rgba(0, 0, 0, 0.1);
   z-index: 98;
   font-family: 'JetBrains Mono', monospace;
 }
 
-.btn-flotante:hover {
-  box-shadow: -1px 15px 20px rgb(0, 0, 0);
+.backtotop:hover {
+  box-shadow: -1px 10px 15px var(--accent);
   transform: translateY(-8px);
 }
 
