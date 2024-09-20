@@ -17,5 +17,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
-// CREATE A FUNCION FOR TOGGLING BLOG SUBMENU AND THEN CALL WITH onclick

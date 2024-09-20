@@ -2,6 +2,7 @@
 
 :root {
   --accent:#993abc;
+  --accent2: #5e1a78;
   --bg:#030617;
 }
 
@@ -12,42 +13,8 @@ body {
 }
 
 main {
-  margin-top: 4em;
+  margin-top: 50px;
   padding: 1.5em;
-}
-
-.topmenu {
-  display: flex;
-  text-align: left;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--accent);
-  box-shadow: 0.01em 3em 2em var(--bg);
-}
-
-.blogmenu {
-  display: none;
-  position: fixed;
-  z-index: 99;
-}
-
-.blogmenu ul {
-  list-style-type: none;
-}
-
-.blogmenu ul li a {
-  text-decoration: none;
-  color: white;
-  font-size: 2em;
-}
-
-.intro {
-  color: white;
-  font-family: "Droid Sans Mono", monospace;
-  font-size: 4em;
 }
 
 .topnav {
@@ -62,7 +29,7 @@ main {
 .topnav ul li {
   float: left;
   padding: 1.5em;
-  font-size: 1.5em;
+  font-size: 23px;
   font-family: "JetBrains Mono", monospace;
 }
 
@@ -71,9 +38,13 @@ main {
   color: white;
 }
 
+.topnav ul li a:hover {
+  text-decoration: underline;
+}
+
 .topnav ul li button {
   color: white;
-  font-size: 1em;
+  font-size: 23px;
   font-family: "JetBrains Mono", monospace;
   border: none;
   background-color: transparent;
@@ -83,12 +54,60 @@ main {
   text-decoration: underline;
 }
 
-.topnav ul li a:hover {
-  text-decoration: underline;
+.blogtoggle:hover {
+  background-color: var(--accent2);
+}
+
+.topmenu {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--accent);
+  box-shadow: 0.01em 3em 2em var(--bg);
+  z-index: 10;
+}
+
+.blogmenu {
+  display: none;
+  text-align: left;
+  align-items: center;
+  position: fixed;
+  top: 105px;
+  left: 0;
+  width: 100%;
+  background-color: var(--accent2);
+  box-shadow: 0.01em 3em 2em var(--bg);
+  z-index: 2;
+}
+
+.blogmenu ul {
+  list-style-type: none;
+}
+
+.blogmenu ul li {
+  float: left;
+  padding: 0.5em 1.5em;
+}
+
+.blogmenu ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.intro {
+  color: white;
+  font-family: "Droid Sans Mono", monospace;
+  font-size: 4em;
 }
 
 .backtotop {
-  font-size: 3.5em;
+  font-size: 50px;
   text-decoration: none;
   color: white;
   background-color: var(--accent);
@@ -98,7 +117,7 @@ main {
   bottom: 0.5em;
   right: 0.5em;
   transition: all 299ms ease 0ms;
-  z-index: 98;
+  z-index: 10;
   font-family: 'JetBrains Mono', monospace;
 }
 
@@ -107,19 +126,18 @@ main {
   transform: translateY(-8px);
 }
 
-
 #title {
   color: white;
-  font-size: 3em;
+  font-size: 40px;
   font-family: "JetBrains Mono", monospace;
 }
 
 #logo {
-  height: 6em;
-  width: 6em;
+  height: 100px;
+  width: 100px;
 }
 
 #user {
-  height: 1.5em;
-  width: 1.5em;
+  height: 35px;
+  width: 35px;
 }
