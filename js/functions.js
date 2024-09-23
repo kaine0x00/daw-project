@@ -1,11 +1,12 @@
 let id = null;
+
 function blogMenu(elementId){
   const element = document.getElementById(elementId);
   const topmenu = document.getElementById('topmenu')
   let pos = -10;
   if (element.style.display === "none"){
-    topmenu.style.boxShadow = "none";
     clearInterval(id);
+    topmenu.style.boxShadow = "none";
     element.style.display = "flex";
     id = setInterval(frame, 22 );
     function frame(){
@@ -17,20 +18,22 @@ function blogMenu(elementId){
       }
     }
   } else {
+    clearInterval(id)
     element.style.display = "none";
     topmenu.style.boxShadow = "0.01em 3em 2em var(--bg)";
+    element.style.top = 0;
   }
 }
 
 function profile(elementId){
   const element = document.getElementById(elementId);
   const blackout = document.getElementById('blackout');
-  let pos = -50;
+  let pos = 0;
   if (element.style.display === "none"){
     blackout.style.display = "block";
     element.style.display = "block";
     clearInterval(id);
-    id = setInterval(frame, 1 );
+    id = setInterval(frame, 25 );
     function frame(){
       if (pos === 3){
         clearInterval(id)
@@ -42,6 +45,7 @@ function profile(elementId){
   } else {
     element.style.display = "none";
     blackout.style.display = "none";
+    element.style.right = "0";
   }
 }
 

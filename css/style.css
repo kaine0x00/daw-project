@@ -10,8 +10,6 @@
 
 body {
   background-color: var(--bg);
-  /* provisional height change to main, only for testing button func */
-  height: 3000px;
 }
 
 main {

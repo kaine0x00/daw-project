@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.scrollTo({
           top: targetElement.offsetTop - 170, // Adjust this value to match the height of your fixed menu
           behavior: "smooth",
+
         });
       }
     });
