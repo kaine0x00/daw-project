@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kainé's Hacktips</title>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <meta name="description" content="">
 
   <meta property="og:title" content="Learn hacking techniques with Kaine's Hacktips">
@@ -33,16 +35,16 @@
 
       <nav class="topnav" id="topnav">
         <ul>
-          <li><a href="">About</a></li>
-          <li class="blogtoggle"><button id="blogtoggle"
-            onclick="blogmenu('blogmenu')">
+          <li><a href="">About me</a></li>
+          <li><button
+            type="button"
+            id="blogtoggle"
+            onclick="blogMenu('blogmenu')">
             Blogs &darr;
             </button> </li>
           <li><a href="">Other Projects</a></li>
           <li><a href="">Contact</a></li>
-          <!-- Sample user login icon
-          Should change with javascript to user's selected profile picture -->
-          <li><a href=""><img alt="user icon" id="user" src="/img/user.png"></a></li>
+          <li><button type="button" onclick="profile('profile')"><i id="user" class="fa fa-user-circle"></i></button></li>
         </ul>
       </nav>
   </header>
@@ -82,6 +84,29 @@
         Quisque vivamus vel ad ante feugiat a.
       </p>
     </div>
+
+    <div id="profile" class="profile">
+      <form>
+        <button type="button" id="closeprofile" onclick="profile('profile')">&times;</button>
+        <h2>Customize your profile</h2>
+        <label for="accent">Change the accent colour</label>
+        <input type="color" id="accent" name="accent" value="#ffffff">
+        <button type="button" onclick="changeColour('accent')"><i class="fa fa-paint-brush"></i></button><br>
+        <label for="accent2">Change the second accent colour</label>
+        <input type="color" id="accent2" name="accent2" value="#ffffff">
+        <button type="button" onclick="changeColour('accent2')"><i class="fa fa-paint-brush"></i></button><br>
+        <label for="bg">Change the background colour</label>
+        <input type="color" id="bg" name="bg" value="#ffffff">
+        <button type="button" onclick="changeColour('bg')"><i class="fa fa-paint-brush"></i></button><br>
+        <label for="textcolour">Change the text colour</label>
+        <input type="color" id="textcolour" name="textcolour" value="#ffffff">
+        <button type="button" onclick="changeColour('textcolour')"><i class="fa fa-paint-brush"></i></button><br>
+      </form>
+    </div>
+
+    <div id="blackout" class="blackout"></div>
+    <!-- this is just a black half opaque screen for layering-->
+
   </main>
 
   <a href="#title" class="backtotop">&uarr;</a>
