@@ -49,10 +49,17 @@ function profile(elementId){
   }
 }
 
+const storedColourData = localStorage.getItem('colour')
+const colourData = JSON.parse(storedColourData)
+colourData.accent = 'example'
+console.log(colourData)
+
 function changeColour(id){
   let colour = document.getElementById(id).value;
   let root = document.documentElement;
   root.style.setProperty("--" + id, colour);
+  colourData.id = colour
+  console.log(colourData)
 }
 
 function resetColour(){

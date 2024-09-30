@@ -115,6 +115,10 @@ main {
   font-family: 'Poppins', sans-serif;
 }
 
+.profile i {
+  color: var(--textcolour);
+}
+
 .profile form label{
   font-size: 1.5em;
   margin-bottom: 30px;
@@ -137,11 +141,11 @@ main {
 
 .profile form input[type=color]::-webkit-color-swatch, form button[type=button]::-webkit-color-swatch {
   border-radius: 50%;
-  border: 4px solid black;
+  border: 4px solid var(--textcolour);
 }
 .profile form input[type=color]::-moz-color-swatch, form button[type=button]::-moz-color-swatch {
   border-radius: 50%;
-  border: 4px solid black;
+  border: 4px solid var(--textcolour);
 }
 
 .intro {
@@ -193,11 +197,17 @@ main {
   width: 100px;
 }
 
-#closeprofile {
+#closeProfile {
   float: right;
   margin: -2% 2%;
   color: var(--textcolour);
   background-color: transparent;
   border: none;
   font-size: 4em;
+}
+
+#colourReset {
+  color: var(--textcolour);
+  background-color: transparent;
+  border: none;
 }

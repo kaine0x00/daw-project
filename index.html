@@ -23,7 +23,6 @@
 
   <link rel="manifest" href="/site.webmanifest">
   <script src="/js/app.js"></script>
-  <script src="/js/functions.js"></script>
 
 </head>
 
@@ -36,15 +35,10 @@
       <nav class="topnav" id="topnav">
         <ul>
           <li><a href="">About me</a></li>
-          <li><button
-            type="button"
-            id="blogtoggle"
-            onclick="blogMenu('blogmenu')">
-            Blogs &darr;
-            </button> </li>
+          <li><button type="button" id="blogToggle"> Blogs &darr; </button></li>
           <li><a href="">Other Projects</a></li>
           <li><a href="">Contact</a></li>
-          <li><button type="button" onclick="profile('profile')"><i id="user" class="fa fa-user-circle"></i></button></li>
+          <li><button type="button" id="profileToggle"><i id="user" class="fa fa-user-circle"></i></button></li>
         </ul>
       </nav>
   </header>
@@ -87,20 +81,22 @@
 
     <div id="profile" class="profile">
       <form>
-        <button type="button" id="closeprofile" onclick="profile('profile')">&times;</button>
+        <button type="button" id="closeProfile">&times;</button>
         <h2>Customize your profile</h2>
         <label for="accent">Change the accent colour</label>
         <input type="color" id="accent" name="accent" value="#ffffff">
-        <button type="button" onclick="changeColour('accent')"><i class="fa fa-paint-brush"></i></button><br>
+        <button type="button" id="accentToggle"><i class="fa fa-paint-brush"></i></button><br>
         <label for="accent2">Change the second accent colour</label>
         <input type="color" id="accent2" name="accent2" value="#ffffff">
-        <button type="button" onclick="changeColour('accent2')"><i class="fa fa-paint-brush"></i></button><br>
+        <button type="button" id="accent2Toggle"><i class="fa fa-paint-brush"></i></button><br>
         <label for="bg">Change the background colour</label>
         <input type="color" id="bg" name="bg" value="#ffffff">
-        <button type="button" onclick="changeColour('bg')"><i class="fa fa-paint-brush"></i></button><br>
+        <button type="button" id="bgToggle"><i class="fa fa-paint-brush"></i></button><br>
         <label for="textcolour">Change the text colour</label>
         <input type="color" id="textcolour" name="textcolour" value="#ffffff">
-        <button type="button" onclick="changeColour('textcolour')"><i class="fa fa-paint-brush"></i></button><br>
+        <button type="button" id="textcolourToggle"><i class="fa fa-paint-brush"></i></button><br>
+        <label for="colourReset">Reset the colours back to defaults</label>
+        <button id="colourReset" name="colourReset"><i class="fa fa-times-circle-o"></i></button>
       </form>
     </div>
 

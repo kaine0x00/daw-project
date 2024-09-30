@@ -1,4 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
+  let root = document.documentElement;
+  let id = null;
+
+  const storedColourData = localStorage.getItem('colour')
+  const defaultColours = {
+    accent: "#993abc",
+    accent2: "#5e1a78",
+    bg: "#030617",
+    textcolour: "#ffffff"
+  };
+
+  if (storedColourData) {
+    const colourData = JSON.parse(storedColourData);
+    console.log(colourData);
+    root.style.setProperty("--accent", colourData.accent);
+    root.style.setProperty("--accent2", colourData.accent2);
+    root.style.setProperty("--bg", colourData.bg);
+    root.style.setProperty("--textcolour", colourData.textcolour);
+  } else {
+    console.log('User data not found in local storage. Filling user data with default colours');
+    localStorage.setItem('colour', JSON.stringify(defaultColours));
+    const colourData = JSON.parse(storedColourData);
+    console.log(colourData);
+  }
+
   const links = document.querySelectorAll('a[href^="#"]');
 
   links.forEach((link) => {
@@ -10,11 +35,103 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (targetElement) {
         window.scrollTo({
-          top: targetElement.offsetTop - 170, // Adjust this value to match the height of your fixed menu
+          top: targetElement.offsetTop - 170,
           behavior: "smooth",
 
         });
       }
     });
   });
+
+  document.getElementById('blogToggle').addEventListener('click', function (){
+    console.log("button clicked")
+    const element = document.getElementById('blogmenu');
+    const topmenu = document.getElementById('topmenu')
+    let pos = -10;
+    if (element.style.display === "none"){
+      clearInterval(id);
+      topmenu.style.boxShadow = "none";
+      element.style.display = "flex";
+      id = setInterval(frame, 22 );
+      function frame(){
+        if (pos === 13){
+          clearInterval(id)
+        } else {
+          pos++;
+          element.style.top = pos*8 + 'px';
+        }
+      }
+    } else {
+      clearInterval(id)
+      element.style.display = "none";
+      topmenu.style.boxShadow = "0.01em 3em 2em var(--bg)";
+      element.style.top = 0;
+    }
+  });
+
+  document.getElementById('profileToggle').addEventListener('click', function () {
+    const element = document.getElementById('profile');
+    const blackout = document.getElementById('blackout');
+    let pos = 0;
+    blackout.style.display = "block";
+    element.style.display = "block";
+    clearInterval(id);
+    id = setInterval(frame, 25);
+
+    function frame() {
+      if (pos === 3) {
+        clearInterval(id)
+      } else {
+        pos++;
+        element.style.right = pos * 5 + 'px';
+      }
+    }
+  });
+
+  document.getElementById('closeProfile').addEventListener('click', function (){
+    const element = document.getElementById('profile');
+    const blackout = document.getElementById('blackout');
+    element.style.display = "none";
+    blackout.style.display = "none";
+    element.style.right = "0";
+  });
+
+  let colours = JSON.parse(storedColourData)
+
+  document.getElementById('accentToggle').addEventListener('click', function (){
+    let colour = document.getElementById('accent').value;
+    root.style.setProperty("--accent" , colour);
+    colours.accent = colour;
+    localStorage.setItem('colour', JSON.stringify(colours))
+    console.log(storedColourData)
+  });
+
+  document.getElementById('accent2Toggle').addEventListener('click', function (){
+    let colour = document.getElementById('accent2').value;
+    root.style.setProperty("--accent2" , colour);
+    colours.accent2 = colour;
+    localStorage.setItem('colour', JSON.stringify(colours))
+    console.log(storedColourData)
+  });
+
+  document.getElementById('bgToggle').addEventListener('click', function (){
+    let colour = document.getElementById('bg').value;
+    root.style.setProperty("--bg" , colour);
+    colours.bg = colour;
+    localStorage.setItem('colour', JSON.stringify(colours))
+    console.log(storedColourData)
+  });
+
+  document.getElementById('textcolourToggle').addEventListener('click', function (){
+    let colour = document.getElementById('textcolour').value;
+    root.style.setProperty("--textcolour" , colour);
+    colours.textcolour = colour;
+    localStorage.setItem('colour', JSON.stringify(colours))
+    console.log(storedColourData)
+  });
+
+  document.getElementById('colourReset').addEventListener('click', function (){
+    localStorage.setItem('colour', JSON.stringify(defaultColours))
+  });
+
 });
