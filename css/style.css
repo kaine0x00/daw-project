@@ -10,11 +10,21 @@
 
 body {
   background-color: var(--bg);
+  color: var(--textcolour);
 }
 
 main {
-  margin-top: 50px;
+  margin-top: 75px;
   padding: 1.5em;
+  font-family: 'Poppins', sans-serif;
+}
+
+main p {
+  font-size: 2.5em;
+}
+
+main h2 {
+  font-size:3.5em;
 }
 
 .topnav {
@@ -148,10 +158,11 @@ main {
   border: 4px solid var(--textcolour);
 }
 
-.intro {
-  color: var(--textcolour);
-  font-family: 'Poppins', sans-serif;
-  font-size: 4em;
+.highlight {
+  color: var(--accent);
+}
+.highlight2 {
+  color: var(--accent2);
 }
 
 .backtotop {
@@ -210,4 +221,8 @@ main {
   color: var(--textcolour);
   background-color: transparent;
   border: none;
+}
+
+#profileToggle {
+  font-size: 25px;
 }
