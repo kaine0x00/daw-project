@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const defaultColours = {
     accent: "#993abc",
     accent2: "#5e1a78",
-    bg: "#030617",
+    bg: "#010415",
     textcolour: "#ffffff"
   };
 
@@ -132,6 +132,94 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById('colourReset').addEventListener('click', function (){
     localStorage.setItem('colour', JSON.stringify(defaultColours))
+  });
+
+  function showSection(type, sectionId) {
+    const sections = {
+      xss: [
+        "xss-overview",
+        "reflected-xss",
+        "stored-xss",
+        "dom-based-xss",
+        "self-xss"
+      ],
+      hardware: [
+        "hardware-overview",
+        "bluetooth-hacking",
+        "wifi-hacking",
+        "nfc-hacking",
+        "ethernet-hacking",
+        "rubber-duckies"
+      ],
+      idor: [
+        "idor-overview",
+        "insecure-objects",
+        "url-manipulation",
+        "parameter-tampering",
+        "access-control-issues"
+      ],
+      phishing: [
+        "phishing-overview",
+        "email-phishing",
+        "spear-phishing",
+        "whaling-phishing",
+        "vishing-phishing",
+        "smishing-phishing"
+      ],
+      sql: [
+        "sql-overview",
+        "in-band-sql-injection",
+        "blind-sql-injection",
+        "out-of-band-sql-injection",
+        "union-based-sql-injection"
+      ],
+      malware: [
+        "malware-overview",
+        "virus-malware",
+        "worm-malware",
+        "trojan-malware",
+        "ransomware-malware",
+        "spyware-malware",
+        "adware-malware"
+      ],
+      dos: [
+        "dos-overview",
+        "syn-flood",
+        "udp-flood",
+        "http-flood"
+      ],
+      zeroday: [
+        "zeroday-overview",
+        "remote-zeroday",
+        "local-zeroday",
+        "webapp-zeroday"
+      ]
+    };
+
+    if (sections[type]) {
+      sections[type].forEach(id => {
+        document.getElementById(id).style.display = "none";
+        document.getElementById(id+'Btn').style.border = "var(--accent) 1px solid";
+        document.getElementById(id+'Btn').style.color = "var(--accent)";
+        document.getElementById(id+'Btn').style.backgroundColor = "var(--bg)";
+      });
+    }
+
+    document.getElementById(sectionId).style.display = "block";
+    document.getElementById(sectionId+'Btn').style.border = "var(--bg) 1px solid";
+    document.getElementById(sectionId+'Btn').style.color = "var(--bg)";
+    document.getElementById(sectionId+'Btn').style.backgroundColor = "var(--accent)";
+  }
+
+  const buttons = document.querySelectorAll('.blogButton');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      const sectionId = this.getAttribute('data-section');
+      const type = this.getAttribute('data-type');
+
+      showSection(type, sectionId);
+    });
   });
 
 });

@@ -12,7 +12,8 @@
 
   <meta property="og:title" content="Learn hacking techniques with Kaine's Hacktips">
   <meta property="og:site_name" content="Kaine's Hacktips">
-  <meta property="og:description" content="Here you will find information on mutliple common attack methodologies that threat actors may use to gain access to private data.">
+  <meta property="og:description"
+        content="Here you will find information on mutliple common attack methodologies that threat actors may use to gain access to private data.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://hacktips.kaine0x00.dev/index.html">
   <meta property="og:image" content="https://hacktips.kaine0x00.dev/icon.png">
@@ -28,117 +29,356 @@
 
 <body>
 
-  <header class="topmenu" id="topmenu">
-      <a><img id="logo" src="/img/icon.png" alt="logo"></a>
-      <h1 id="title">Kain&eacute;'s HackTips</h1>
+<header class="topmenu" id="topmenu">
+  <a><img id="logo" src="/img/icon.png" alt="logo"></a>
+  <h1 id="title">Kain&eacute;'s HackTips</h1>
 
-      <nav class="topnav" id="topnav">
-        <ul>
-          <li><a href="#about">About me</a></li>
-          <li><button type="button" id="blogToggle"> Blogs &darr; </button></li>
-          <li><a href="">Other Projects</a></li>
-          <li><a href="">Contact</a></li>
-          <li><button type="button" id="profileToggle"><i id="user" class="fa fa-user-circle"></i></button></li>
-        </ul>
-      </nav>
-  </header>
+  <nav class="topnav" id="topnav">
+    <ul>
+      <li><a href="#about">About me</a></li>
+      <li>
+        <button type="button" id="blogToggle"> Blogs &darr;</button>
+      </li>
+      <li><a href="">Other Projects</a></li>
+      <li><a href="">Contact</a></li>
+      <li>
+        <button type="button" id="profileToggle"><i id="user" class="fa fa-user-circle"></i></button>
+      </li>
+    </ul>
+  </nav>
+</header>
 
-  <main>
+<main>
 
-    <div id="blogmenu" class="blogmenu">
-      <ul>
-        <li><a href="">XSS</a></li>
-        <li><a href="">Hardware Hacking</a></li>
-        <li><a href="">IDOR</a></li>
-        <li><a href="">Phishing</a></li>
-        <li><a href="">SQL Injection</a></li>
-        <li><a href="">Others</a></li>
-      </ul>
-    </div>
+  <div id="blogmenu" class="blogmenu">
+    <ul>
+      <li><a href="#xss">XSS</a></li>
+      <li><a href="#hw">Hardware Hacking</a></li>
+      <li><a href="#idor">IDOR</a></li>
+      <li><a href="#phishing">Phishing</a></li>
+      <li><a href="#sql">SQL Injection</a></li>
+      <li><a href="#malware">Malware</a></li>
+      <li><a href="#dos">DoS</a></li>
+      <li><a href="#zeroday">Zero Day</a></li>
+    </ul>
+  </div>
 
-    <div class="about" id="about">
-      <h2>About me!</h2>
-      <p>
-        Hi, I'm <b class="highlight">Danny Robinson</b> but my friends call me <i class="highlight2">Kain&eacute;</i>. I'm a
-        <i class="highlight2"> self-taught programmer</i>
-        and an all-around <b class="highlight">computer nerd</b>. I also <b class="highlight">love music</b>,
-        <b class="highlight">science fiction</b>,
-        <b class="highlight">cats</b>,
-        <b class="highlight">video games</b> and
-        <b class="highlight">coffee</b>.
-        <br>
-        Throughout my trajectory I have <i class="highlight2">gotten familiar</i>
-        with quite a few <i class="highlight2">programming languages</i> such as:
-        <b class="highlight">Python</b>,
-        <b class="highlight">C and C++</b>,
-        <b class="highlight">Golang</b>,
-        <b class="highlight">Rust</b>,
-        <b class="highlight">JS</b>,
-        <b class="highlight">C#</b> and
-        <b class="highlight">Java</b>.
-        <br>
-        <i class="highlight2">Cybersecurity</i> is one of my favourite aspects of IT, i just <b class="highlight">love hacking things</b>, with permission of course :)
-        <br>
-        I really enjoy the idea of <b class="highlight">combining programming with ethical hacking</b>, developing
-        <i class="highlight2">my own tools</i> and using my coding knowledge to
-        <i class="highlight2">both make and break</i> all sorts of different software.
-        <br>
-        If I have to <i class="highlight2">choose between backend and frontend</i>, I would go for <b class="highlight">backend</b> any day of the week.
-        <b class="highlight">Low level programming</b>,
-        <b class="highlight">reverse engineering</b>,
-        <b class="highlight">malware development</b>
-        and <b class="highlight">gamedev</b>
-        are <i class="highlight2">my cup of tea</i>.
-      </p>
-      <p>
-        <b class="highlight">By the way!</b> Check out the
-        <i class="highlight fa fa-user-circle"></i> icon at the <b class="highlight">top right</b> to make the page more
-        <b class="highlight">c</b><b class="highlight2">o</b><b class="highlight">l</b><b class="highlight2">o</b><b class="highlight">u</b><b class="highlight2">r</b><b class="highlight">f</b><b class="highlight2">u</b><b class="highlight">l</b>
-      </p>
-    </div>
+  <div class="about" id="about">
+    <h2>About me!</h2>
+    <p>
+      Hi, I'm <b class="highlight">Danny Robinson</b> but my friends call me <i class="highlight2">Kain&eacute;</i>. I'm
+      a
+      <i class="highlight2"> self-taught programmer</i>
+      and an all-around <b class="highlight">computer nerd</b>. I also <b class="highlight">love music</b>,
+      <b class="highlight">science fiction</b>,
+      <b class="highlight">cats</b>,
+      <b class="highlight">video games</b> and
+      <b class="highlight">coffee</b>.
+      <br>
+      Throughout my trajectory I have <i class="highlight2">gotten familiar</i>
+      with quite a few <i class="highlight2">programming languages</i> such as:
+      <b class="highlight">Python</b>,
+      <b class="highlight">C and C++</b>,
+      <b class="highlight">Golang</b>,
+      <b class="highlight">Rust</b>,
+      <b class="highlight">JS</b>,
+      <b class="highlight">C#</b> and
+      <b class="highlight">Java</b>.
+      <br>
+      <i class="highlight2">Cybersecurity</i> is one of my favourite aspects of IT, i just <b class="highlight">love
+      hacking things</b>, with permission of course :)
+      <br>
+      I really enjoy the idea of <b class="highlight">combining programming with ethical hacking</b>, developing
+      <i class="highlight2">my own tools</i> and using my coding knowledge to
+      <i class="highlight2">both make and break</i> all sorts of different software.
+      <br>
+      If I have to <i class="highlight2">choose between backend and frontend</i>, I would go for <b class="highlight">backend</b>
+      any day of the week.
+      <b class="highlight">Low level programming</b>,
+      <b class="highlight">reverse engineering</b>,
+      <b class="highlight">malware development</b>
+      and <b class="highlight">gamedev</b>
+      are <i class="highlight2">my cup of tea</i>.
+    </p>
+    <p>
+      <b class="highlight">By the way!</b> Check out the
+      <i class="highlight fa fa-user-circle"></i> icon at the <b class="highlight">top right</b> to make the page more
+      <b class="highlight">c</b><b class="highlight2">o</b><b class="highlight">l</b><b class="highlight2">o</b><b
+      class="highlight">u</b><b class="highlight2">r</b><b class="highlight">f</b><b class="highlight2">u</b><b
+      class="highlight">l</b>
+    </p>
+  </div>
 
-    <div class="intro" id="intro">
-      <p>
-        <b>Hello world!</b> This is school project, currently in development. <br>
-        Developed and deployed by Danny Robinson.
-      </p>
-      <p>
-        Lorem ipsum odor amet, consectetuer adipiscing elit.
-        Aliquet mus semper nulla hendrerit sit. Consectetur sed tincidunt ullamcorper porttitor mauris.
-        Parturient semper magnis condimentum; dictum orci mauris condimentum eget.
-        Senectus lobortis est pharetra vitae montes. Netus malesuada egestas convallis;
-        conubia malesuada gravida cubilia.
-        Conubia at turpis torquent himenaeos lectus parturient tempor dictumst.
-      </p>
-    </div>
+  <div>
 
-    <div id="profile" class="profile">
-      <form>
-        <button type="button" id="closeProfile">&times;</button>
-        <h2>Customize your profile</h2>
-        <label for="accent">Change the accent colour</label>
-        <input type="color" id="accent" name="accent" value="#ffffff">
-        <button type="button" id="accentToggle"><i class="fa fa-paint-brush"></i></button><br>
-        <label for="accent2">Change the second accent colour</label>
-        <input type="color" id="accent2" name="accent2" value="#ffffff">
-        <button type="button" id="accent2Toggle"><i class="fa fa-paint-brush"></i></button><br>
-        <label for="bg">Change the background colour</label>
-        <input type="color" id="bg" name="bg" value="#ffffff">
-        <button type="button" id="bgToggle"><i class="fa fa-paint-brush"></i></button><br>
-        <label for="textcolour">Change the text colour</label>
-        <input type="color" id="textcolour" name="textcolour" value="#ffffff">
-        <button type="button" id="textcolourToggle"><i class="fa fa-paint-brush"></i></button><br>
-        <label for="colourReset">Reset the colours back to defaults</label>
-        <button id="colourReset" name="colourReset"><i class="fa fa-times-circle-o"></i></button>
-      </form>
-    </div>
+    <h2 id="xss">XSS</h2>
 
-  </main>
+    <button id="xss-overviewBtn" class="blogButton" data-type="xss" data-section="xss-overview">XSS Overview</button>
+    <button id="reflected-xssBtn" class="blogButton" data-type="xss" data-section="reflected-xss">Reflected XSS</button>
+    <button id="stored-xssBtn" class="blogButton" data-type="xss" data-section="stored-xss">Stored XSS</button>
+    <button id="dom-based-xssBtn" class="blogButton" data-type="xss" data-section="dom-based-xss">DOM-Based XSS</button>
+    <button id="self-xssBtn" class="blogButton" data-type="xss" data-section="self-xss">Self XSS</button>
 
-  <a href="#title" class="backtotop">&uarr;</a>
+    <p class="blogItem" id="xss-overview">
+      <b class="highlight">Cross-Site Scripting (XSS)</b> is a security vulnerability that allows attackers to inject malicious scripts into web pages viewed by other users. This can enable attackers to steal data, hijack sessions, or trick users into performing unwanted actions. XSS typically occurs due to insufficient input validation, allowing scripts to be executed within the context of a trusted site.
+    </p>
 
-  <div id="blackout" class="blackout"></div>
-  <!-- this is just a black half opaque screen for layering-->
+    <p class="blogItem" id="reflected-xss">
+      <b class="highlight">Reflected XSS:</b> Reflected XSS occurs when malicious code is injected into a URL and then reflected back in the response (e.g., in an error message or search result) without validation. It requires user interaction, like clicking a malicious link, for the attack to execute.
+    </p>
+
+    <p class="blogItem" id="stored-xss">
+      <b class="highlight">Stored XSS:</b> Stored XSS (or persistent XSS) happens when the malicious script is saved on the server (e.g., in a database or message board). This script is then served to other users who visit the affected page, making it more dangerous, as it doesn’t rely on user interaction beyond viewing the page.
+    </p>
+
+    <p class="blogItem" id="dom-based-xss">
+      <b class="highlight">DOM-based XSS:</b> DOM-based XSS is a client-side attack where the vulnerability exists in the document object model (DOM) itself. Malicious scripts manipulate the page content directly in the browser without needing to communicate with the server. This type is harder to detect since it doesn’t involve server-side data storage or reflection.
+    </p>
+
+    <p class="blogItem" id="self-xss">
+      <b class="highlight">Self XSS:</b> Self XSS is a form of social engineering where attackers trick users into running malicious code in their own browser console. It’s not an XSS vulnerability in the website itself but rather in how the site allows users to interact with it.
+    </p>
+
+    <h2 id="hw">Hardware Hacking</h2>
+
+    <button id="hardware-overviewBtn" class="blogButton" data-type="hardware" data-section="hardware-overview">Hardware Hacking Overview</button>
+    <button id="bluetooth-hackingBtn" class="blogButton" data-type="hardware" data-section="bluetooth-hacking">Bluetooth Hacking</button>
+    <button id="wifi-hackingBtn" class="blogButton" data-type="hardware" data-section="wifi-hacking">Wi-Fi Hacking</button>
+    <button id="nfc-hackingBtn" class="blogButton" data-type="hardware" data-section="nfc-hacking">NFC Hacking</button>
+    <button id="ethernet-hackingBtn" class="blogButton" data-type="hardware" data-section="ethernet-hacking">Ethernet Hacking</button>
+    <button id="rubber-duckiesBtn" class="blogButton" data-type="hardware" data-section="rubber-duckies">Rubber Duckies</button>
+
+    <p class="blogItem" id="hardware-overview">
+      <b class="highlight">Hardware hacking</b> involves the process of modifying or manipulating electronic devices and their components to achieve a desired outcome, often to improve functionality, enhance performance, or exploit vulnerabilities. This can include everything from repurposing existing hardware to creating custom circuits or utilizing existing technology in unintended ways.
+    </p>
+
+    <p class="blogItem" id="bluetooth-hacking">
+      <b class="highlight">Bluetooth Hacking:</b> Involves exploiting vulnerabilities in Bluetooth-enabled devices to gain unauthorized access or manipulate data. Techniques include sniffing traffic, executing man-in-the-middle attacks, or pairing with devices without permission.
+    </p>
+
+    <p class="blogItem" id="wifi-hacking">
+      <b class="highlight">Wi-Fi Hacking:</b> Targets vulnerabilities in wireless networks, often using methods like packet sniffing, de-authentication attacks, or cracking WEP/WPA encryption to gain unauthorized access to network resources.
+    </p>
+
+    <p class="blogItem" id="nfc-hacking">
+      <b class="highlight">NFC Hacking:</b> Involves manipulating or intercepting communications between NFC-enabled devices. Attackers may use techniques like cloning NFC tags, or conducting relay attacks to spoof or steal data.
+    </p>
+
+    <p class="blogItem" id="ethernet-hacking">
+      <b class="highlight">Ethernet Hacking:</b> Focuses on wired network vulnerabilities. Techniques include ARP spoofing, VLAN hopping, or exploiting weaknesses in network switches to intercept data packets or gain unauthorized access.
+    </p>
+
+    <p class="blogItem" id="rubber-duckies">
+      <b class="highlight">Rubber Duckies:</b> Refers to a type of USB device that can be programmed to execute keystroke injection attacks. When plugged into a computer, it acts like a keyboard, executing pre-defined scripts to exploit vulnerabilities or extract data.
+    </p>
+
+    <h2 id="idor">IDOR</h2>
+
+    <button id="idor-overviewBtn" class="blogButton" data-type="idor" data-section="idor-overview">IDOR Overview</button>
+    <button id="insecure-objectsBtn" class="blogButton" data-type="idor" data-section="insecure-objects">Insecure Object References</button>
+    <button id="url-manipulationBtn" class="blogButton" data-type="idor" data-section="url-manipulation">URL Manipulation</button>
+    <button id="parameter-tamperingBtn" class="blogButton" data-type="idor" data-section="parameter-tampering">Parameter Tampering</button>
+    <button id="access-control-issuesBtn" class="blogButton" data-type="idor" data-section="access-control-issues">Access Control Issues</button>
+
+    <p class="blogItem" id="idor-overview">
+      <b class="highlight">Insecure Direct Object Reference (IDOR)</b> is a type of access control vulnerability that allows an attacker to gain direct access to objects by modifying parameters in the URL or request. This can lead to unauthorized access to sensitive data or functionality, often due to insufficient validation of user input and lack of proper access controls.
+    </p>
+
+    <p class="blogItem" id="insecure-objects">
+      <b class="highlight">Insecure Object References:</b> This occurs when applications expose a reference to an internal implementation object, such as a file or database key. If these references are predictable, attackers can manipulate them to access unauthorized objects.
+    </p>
+
+    <p class="blogItem" id="url-manipulation">
+      <b class="highlight">URL Manipulation:</b> This type of IDOR occurs when an attacker modifies the URL parameters to access resources or data they are not authorized to view. For example, changing a user ID in the URL can allow an attacker to access another user’s account information.
+    </p>
+
+    <p class="blogItem" id="parameter-tampering">
+      <b class="highlight">Parameter Tampering:</b> This involves altering the parameters of a request sent to a server to bypass security controls. Attackers may change the parameters to retrieve, modify, or delete resources they are not supposed to access.
+    </p>
+
+    <p class="blogItem" id="access-control-issues">
+      <b class="highlight">Access Control Issues:</b> IDOR often highlights flaws in an application’s access control mechanisms. If an application fails to properly enforce user permissions for accessing sensitive objects, it can lead to unauthorized data access and potential data breaches.
+    </p>
+
+    <h2 id="phishing">Phishing</h2>
+
+    <button id="phishing-overviewBtn" class="blogButton" data-type="phishing" data-section="phishing-overview">Phishing Overview</button>
+    <button id="email-phishingBtn" class="blogButton" data-type="phishing" data-section="email-phishing">Email Phishing</button>
+    <button id="spear-phishingBtn" class="blogButton" data-type="phishing" data-section="spear-phishing">Spear Phishing</button>
+    <button id="whaling-phishingBtn" class="blogButton" data-type="phishing" data-section="whaling-phishing">Whaling Phishing</button>
+    <button id="vishing-phishingBtn" class="blogButton" data-type="phishing" data-section="vishing-phishing">Vishing Phishing</button>
+    <button id="smishing-phishingBtn" class="blogButton" data-type="phishing" data-section="smishing-phishing">Smishing Phishing</button>
+
+    <p class="blogItem" id="phishing-overview">
+      <b class="highlight">Phishing</b> is a type of cyber attack that aims to trick individuals into providing sensitive information, such as usernames, passwords, and credit card details, by impersonating a trustworthy entity. Phishing typically occurs through deceptive emails, websites, or messages, and it exploits human psychology rather than technical vulnerabilities.
+    </p>
+
+    <p class="blogItem" id="email-phishing">
+      <b class="highlight">Email Phishing:</b> This is the most common form of phishing, where attackers send fraudulent emails that appear to be from legitimate sources. These emails often contain malicious links or attachments, prompting victims to enter personal information or download malware.
+    </p>
+
+    <p class="blogItem" id="spear-phishing">
+      <b class="highlight">Spear Phishing:</b> Unlike general phishing attacks, spear phishing targets specific individuals or organizations. Attackers gather personal information about their targets to create highly personalized messages that increase the likelihood of success.
+    </p>
+
+    <p class="blogItem" id="whaling-phishing">
+      <b class="highlight">Whaling Phishing:</b> This variant of phishing targets high-profile individuals, such as executives or key decision-makers within an organization. The attacks are often more sophisticated, using tailored messages that appear legitimate and urgent to trick the victim into providing sensitive information.
+    </p>
+
+    <p class="blogItem" id="vishing-phishing">
+      <b class="highlight">Vishing Phishing:</b> Voice phishing, or vishing, involves using phone calls to deceive victims into revealing sensitive information. Attackers often pose as legitimate entities, such as banks or tech support, and may use social engineering tactics to build trust.
+    </p>
+
+    <p class="blogItem" id="smishing-phishing">
+      <b class="highlight">Smishing Phishing:</b> Smishing combines SMS messaging with phishing tactics. Attackers send text messages that appear to be from legitimate sources, often containing links to fraudulent websites or requests for personal information.
+    </p>
+
+    <h2 id="sql">SQL Injection</h2>
+
+    <button id="sql-overviewBtn" class="blogButton" data-type="sql" data-section="sql-overview">SQL Injection Overview</button>
+    <button id="in-band-sql-injectionBtn" class="blogButton" data-type="sql" data-section="in-band-sql-injection">In-Band SQL Injection</button>
+    <button id="blind-sql-injectionBtn" class="blogButton" data-type="sql" data-section="blind-sql-injection">Blind SQL Injection</button>
+    <button id="out-of-band-sql-injectionBtn" class="blogButton" data-type="sql" data-section="out-of-band-sql-injection">Out-of-Band SQL Injection</button>
+    <button id="union-based-sql-injectionBtn" class="blogButton" data-type="sql" data-section="union-based-sql-injection">Union-Based SQL Injection</button>
+
+    <p class="blogItem" id="sql-overview">
+      <b class="highlight">SQL Injection</b> is a code injection technique that exploits vulnerabilities in an application's software by allowing an attacker to interfere with the queries that an application makes to its database. This can enable attackers to view data they are not normally able to retrieve, modify or delete data, and in some cases, execute administrative operations on the database.
+    </p>
+
+    <p class="blogItem" id="in-band-sql-injection">
+      <b class="highlight">In-Band SQL Injection:</b> This type of SQL injection is the most straightforward and common. It occurs when an attacker is able to use the same channel to both launch the attack and gather the results. This can include retrieving data through error messages or using UNION-based queries to get results directly.
+    </p>
+
+    <p class="blogItem" id="blind-sql-injection">
+      <b class="highlight">Blind SQL Injection:</b> In blind SQL injection, the attacker is unable to see the result of their query. Instead, they ask the database a true or false question and determine the answer based on the application's response. This can take longer but can still reveal sensitive information.
+    </p>
+
+    <p class="blogItem" id="out-of-band-sql-injection">
+      <b class="highlight">Out-of-Band SQL Injection:</b> This type of attack is less common and occurs when an attacker is unable to use the same channel to launch the attack and gather results. Instead, they use different channels to retrieve data, often by triggering the database to send data to an external server controlled by the attacker.
+    </p>
+
+    <p class="blogItem" id="union-based-sql-injection">
+      <b class="highlight">Union-Based SQL Injection:</b> Union-based SQL injection allows an attacker to combine the results of the original query with the results of another query, typically to extract sensitive data from the database. This technique is often employed when the attacker knows the structure of the database.
+    </p>
+
+    <h2 id="malware">Malware</h2>
+
+    <button id="malware-overviewBtn" class="blogButton" data-type="malware" data-section="malware-overview">Malware Overview</button>
+    <button id="virus-malwareBtn" class="blogButton" data-type="malware" data-section="virus-malware">Virus</button>
+    <button id="worm-malwareBtn" class="blogButton" data-type="malware" data-section="worm-malware">Worm</button>
+    <button id="trojan-malwareBtn" class="blogButton" data-type="malware" data-section="trojan-malware">Trojan</button>
+    <button id="ransomware-malwareBtn" class="blogButton" data-type="malware" data-section="ransomware-malware">Ransomware</button>
+    <button id="spyware-malwareBtn" class="blogButton" data-type="malware" data-section="spyware-malware">Spyware</button>
+    <button id="adware-malwareBtn" class="blogButton" data-type="malware" data-section="adware-malware">Adware</button>
+
+    <p class="blogItem" id="malware-overview">
+      <b class="highlight">Malware</b> is a broad term used to describe any malicious software designed to harm, exploit, or otherwise compromise a computer system or network. This includes a variety of harmful software types that can disrupt, damage, or gain unauthorized access to sensitive information.
+    </p>
+
+    <p class="blogItem" id="virus-malware">
+      <b class="highlight">Virus:</b> A virus is a type of malware that attaches itself to legitimate programs or files. Once executed, it can replicate itself and spread to other files and systems, potentially causing damage and disrupting normal operations.
+    </p>
+
+    <p class="blogItem" id="worm-malware">
+      <b class="highlight">Worm:</b> Unlike a virus, a worm is a standalone malware that replicates itself to spread to other computers, often exploiting vulnerabilities in network protocols. Worms can consume bandwidth and cause system failures without user intervention.
+    </p>
+
+    <p class="blogItem" id="trojan-malware">
+      <b class="highlight">Trojan:</b> A Trojan horse is a type of malware that disguises itself as a legitimate application or software. It tricks users into installing it, which then allows unauthorized access or control over the infected system.
+    </p>
+
+    <p class="blogItem" id="ransomware-malware">
+      <b class="highlight">Ransomware:</b> Ransomware is a type of malware that encrypts files on a victim's computer, making them inaccessible until a ransom is paid to the attacker. This form of malware can lead to significant financial loss and data compromise.
+    </p>
+
+    <p class="blogItem" id="spyware-malware">
+      <b class="highlight">Spyware:</b> Spyware is malware that secretly monitors user activity and gathers personal information without their knowledge. It can track browsing habits, collect sensitive data, and often comes bundled with other software.
+    </p>
+
+    <p class="blogItem" id="adware-malware">
+      <b class="highlight">Adware:</b> Adware is software that automatically displays or downloads advertisements when a user is online. While not always malicious, adware can degrade system performance and may collect user data for targeted advertising without consent.
+    </p>
+
+    <h2 id="dos">Denial of Service (DoS) Attacks</h2>
+
+    <button id="dos-overviewBtn" class="blogButton" data-type="dos" data-section="dos-overview">DoS Overview</button>
+    <button id="syn-floodBtn" class="blogButton" data-type="dos" data-section="syn-flood">SYN Flood</button>
+    <button id="udp-floodBtn" class="blogButton" data-type="dos" data-section="udp-flood">UDP Flood</button>
+    <button id="http-floodBtn" class="blogButton" data-type="dos" data-section="http-flood">HTTP Flood</button>
+
+    <p class="blogItem" id="dos-overview">
+      <b class="highlight">Denial of Service (DoS) Attacks</b> aim to make a service unavailable by overwhelming it with a flood of illegitimate requests, which can disrupt operations and deny access to legitimate users.
+    </p>
+
+    <p class="blogItem" id="syn-flood">
+      <b class="highlight">SYN Flood:</b> This attack exploits the TCP handshake by sending numerous SYN requests to a target without completing the handshake, consuming server resources and potentially crashing the server.
+    </p>
+
+    <p class="blogItem" id="udp-flood">
+      <b class="highlight">UDP Flood:</b> A UDP flood sends a large number of UDP packets to random ports on a target system. The system checks for applications listening on those ports and responds with ICMP packets, overwhelming its resources.
+    </p>
+
+    <p class="blogItem" id="http-flood">
+      <b class="highlight">HTTP Flood:</b> An HTTP flood attack targets web servers by overwhelming them with a massive volume of HTTP requests, consuming bandwidth and server resources, leading to service outages.
+    </p>
+
+    <h2 id="zeroday">Zero-Day Exploits</h2>
+
+    <button id="zeroday-overviewBtn" class="blogButton" data-type="zeroday" data-section="zeroday-overview">Zero-Day Overview</button>
+    <button id="remote-zerodayBtn" class="blogButton" data-type="zeroday" data-section="remote-zeroday">Remote Zero-Day</button>
+    <button id="local-zerodayBtn" class="blogButton" data-type="zeroday" data-section="local-zeroday">Local Zero-Day</button>
+    <button id="webapp-zerodayBtn" class="blogButton" data-type="zeroday" data-section="webapp-zeroday">Web Application Zero-Day</button>
+
+    <p class="blogItem" id="zeroday-overview">
+      <b class="highlight">Zero-Day Exploits</b> are attacks that take advantage of software vulnerabilities that are unknown to the vendor, meaning there is no patch available to protect against them. These exploits are highly valuable in the cybercriminal world.
+    </p>
+
+    <p class="blogItem" id="remote-zeroday">
+      <b class="highlight">Remote Zero-Day:</b> These exploits can be executed from outside the targeted network, allowing attackers to exploit vulnerabilities without physical access to the system.
+    </p>
+
+    <p class="blogItem" id="local-zeroday">
+      <b class="highlight">Local Zero-Day:</b> Local zero-days require physical access to the system to exploit the vulnerability, allowing attackers to execute malicious actions once inside.
+    </p>
+
+    <p class="blogItem" id="webapp-zeroday">
+      <b class="highlight">Web Application Zero-Day:</b> This type of zero-day targets vulnerabilities in web applications, potentially allowing attackers to gain unauthorized access or manipulate sensitive data.
+    </p>
+
+  </div>
+
+  <!-- floating things -->
+  <div id="profile" class="profile">
+    <form>
+      <button type="button" id="closeProfile">&times;</button>
+      <h2>Customize your profile</h2>
+      <label for="accent">Change the accent colour</label>
+      <input type="color" id="accent" name="accent" value="#ffffff">
+      <button type="button" id="accentToggle"><i class="fa fa-paint-brush"></i></button>
+      <br>
+      <label for="accent2">Change the second accent colour</label>
+      <input type="color" id="accent2" name="accent2" value="#ffffff">
+      <button type="button" id="accent2Toggle"><i class="fa fa-paint-brush"></i></button>
+      <br>
+      <label for="bg">Change the background colour</label>
+      <input type="color" id="bg" name="bg" value="#ffffff">
+      <button type="button" id="bgToggle"><i class="fa fa-paint-brush"></i></button>
+      <br>
+      <label for="textcolour">Change the text colour</label>
+      <input type="color" id="textcolour" name="textcolour" value="#ffffff">
+      <button type="button" id="textcolourToggle"><i class="fa fa-paint-brush"></i></button>
+      <br>
+      <label for="colourReset">Reset the colours back to defaults</label>
+      <button id="colourReset" name="colourReset"><i class="fa fa-times-circle-o"></i></button>
+    </form>
+  </div>
+
+</main>
+
+<a href="#title" class="backtotop">&uarr;</a>
+
+<div id="blackout" class="blackout"></div>
+<!-- this is just a black half opaque screen for layering-->
 
 </body>
 
