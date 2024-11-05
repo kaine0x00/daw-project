@@ -12,16 +12,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (storedColourData) {
     const colourData = JSON.parse(storedColourData);
-    console.log(colourData);
+    //console.log(colourData);
     root.style.setProperty("--accent", colourData.accent);
     root.style.setProperty("--accent2", colourData.accent2);
     root.style.setProperty("--bg", colourData.bg);
     root.style.setProperty("--textcolour", colourData.textcolour);
-  } else {
+  } else if (storedColourData === null || storedColourData === '' || storedColourData === undefined) {
     console.log('User data not found in local storage. Filling user data with default colours');
     localStorage.setItem('colour', JSON.stringify(defaultColours));
-    const colourData = JSON.parse(storedColourData);
-    console.log(colourData);
+    location.reload();
+    //const colourData = JSON.parse(storedColourData);
+    //console.log(colourData);
   }
 
   const links = document.querySelectorAll('a[href^="#"]');

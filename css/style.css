@@ -24,6 +24,19 @@ main h2 {
   margin-bottom:0.2em;
 }
 
+main h3 {
+  font-size:2.5em;
+  margin-bottom:0.1em;
+}
+
+main a:link, a:visited {
+  color: var(--accent2);
+}
+
+main a:hover, a:active {
+  color: var(--accent);
+}
+
 .topnav {
   position: fixed;
   right: 0
@@ -36,7 +49,7 @@ main h2 {
 .topnav ul li {
   float: left;
   padding: 1.5em;
-  font-size: 23px;
+  font-size: 150%;
   font-family: "JetBrains Mono", monospace;
 }
 
@@ -51,7 +64,7 @@ main h2 {
 
 .topnav ul li button {
   color: var(--textcolour);
-  font-size: 23px;
+  font-size: 100%;
   font-family: "JetBrains Mono", monospace;
   border: none;
   background-color: transparent;
@@ -181,6 +194,69 @@ main h2 {
   background-color: var(--accent);
 }
 
+.screenshot {
+  width: 95%;
+  height: 50%;
+  border-radius: 20px;
+  border: var(--accent) 3px solid;
+}
+
+.code{
+  background-color: var(--accent2);
+  color: var(--bg);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: bold;
+  font-size: 2.5em;
+  padding: 0.5em;
+  border-radius: 20px;
+  border: var(--accent) 3px solid;
+ }
+
+.contact {
+  display: grid;
+  margin-left: 25%;
+}
+
+.contact label {
+  font-size: 1.5em;
+  color: var(--accent2);
+}
+
+.contact input, textarea {
+  width: 70%;
+  padding: 1em;
+  font-size: 1.5em;
+  background-color: var(--bg);
+  color: var(--accent);
+  font-family: 'Poppins', sans-serif;
+  border: var(--accent) 3px solid;
+  border-radius: 20px;
+}
+
+.contact input[type=submit] {
+  width: 20%;
+  background-color: var(--accent2);
+  color: var(--bg);
+}
+
+.contact input[type=submit]:hover {
+  color: var(--accent);
+}
+
+#socials {
+  text-align: center;
+}
+
+#socials a:link, a:visited {
+  font-size: 2em;
+  text-decoration: none;
+  color: var(--accent2);
+}
+
+#socials a:hover a:active {
+  color: var(--accent);
+}
+
 .highlight {
   color: var(--accent);
 }
@@ -222,11 +298,13 @@ main h2 {
 
 #title {
   color: var(--textcolour);
-  font-size: 40px;
+  font-size: 230%;
+  margin-left: 0.5em;
   font-family: "JetBrains Mono", monospace;
 }
 
 #logo {
+  margin-left: 1em;
   height: 100px;
   width: 100px;
 }

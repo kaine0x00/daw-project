@@ -39,8 +39,8 @@
       <li>
         <button type="button" id="blogToggle"> Blogs &darr;</button>
       </li>
-      <li><a href="">Other Projects</a></li>
-      <li><a href="">Contact</a></li>
+      <li><a href="#projects">Other Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
       <li>
         <button type="button" id="profileToggle"><i id="user" class="fa fa-user-circle"></i></button>
       </li>
@@ -105,7 +105,7 @@
       <i class="highlight fa fa-user-circle"></i> icon at the <b class="highlight">top right</b> to make the page more
       <b class="highlight">c</b><b class="highlight2">o</b><b class="highlight">l</b><b class="highlight2">o</b><b
       class="highlight">u</b><b class="highlight2">r</b><b class="highlight">f</b><b class="highlight2">u</b><b
-      class="highlight">l</b>
+      class="highlight">l</b>.
     </p>
   </div>
 
@@ -347,6 +347,81 @@
 
   </div>
 
+  <div>
+    <h2 id="projects">Other projects</h2>
+
+    <p>
+      I have made other cool projects on <b class="highlight">Github</b> that you may wanna check out!
+    </p>
+
+    <h3>Symmetric Encryption algorithm</h3>
+
+    <p>
+      <b class="highlight">KaineCrypt</b> is my own symmetric encryption algorithm that uses a key to
+      encrypt small texts or secrets (<i class="highlight2">Usually a password</i>). I made this program on <b class="highlight">Python</b>
+      for a Cybersecurity project during my time studying <i class="highlight2">CFM SMR</i> in CIP FP Cheste.
+      <br>
+      You can see the following screenshot for its usage:
+      <img class="screenshot" src="/img/kainecrypt.png" alt="Screenshot of Usage of KaineCrypt">
+      <br>
+      If you would like to check it out, you can do it <a href="https://github.com/kaine0x00/KaineCrypt" target="_blank">here!</a>
+    </p>
+
+    <h3>Cybersecurity Tutorials</h3>
+    <p>
+      Yes, I know it seems kinda repetitive, but i just <b class="highlight">Cybersecurity</b>. I have a small blog
+      where I try to post blog-tutorials. It's kind of empty right now for lack of time, but it's more of a proof of concept
+      of what it could be <i class="highlight2">if i had the time...</i>
+      <br>
+      <img class="screenshot" src="/img/blog.png" alt="Blog preview">
+      <br>
+      You can check this one out <a href="https://kaine0x00.github.io/" target="_blank">here!</a>
+    </p>
+
+    <h3>Some neat scripts</h3>
+    <p>
+      When I was first learning programming, I tried to create <b class="highlight">small neat programs</b> to solve minor issues I encountered
+      whilst studying IT. Such as the following <i class="highlight2">linux bash script</i> to find IPs in a text file:
+    </p>
+    <div class="code">
+      <pre><code class="bash">#!/bin/bash
+
+echo "What is the text file you want to scan for IPs?: "
+read FILE
+grep -E '([0-9]{1,3}\.){3}[0-9]{1,3}' ./$FILE
+exit    </code></pre>
+    </div>
+    <p>
+      If you want to get this script and many other fun ones, you can do it <a href="https://github.com/kaine0x00/useful_scripts" target="_blank">here!</a>
+    </p>
+  </div>
+
+  <div class="contact">
+    <h2 id="contact">Contact me!</h2>
+    <form action="mailto:contact@kaine0x00.dev" method="get">
+      <label for="name">Your Name:</label><br>
+      <input type="text" id="name" name="name" required placeholder="Your name here..."><br><br>
+
+      <label for="email">Your Email:</label><br>
+      <input type="email" id="email" name="email" required placeholder="Your email here..."><br><br>
+
+      <label for="message">Your Message:</label><br>
+      <textarea id="message" name="message" rows="4" cols="50" required placeholder="Write some text..."></textarea><br><br>
+
+      <input type="submit" value="Send Email">
+    </form>
+  </div>
+
+  <div>
+    <p id="socials">
+      You can also follow me on my <b class="highlight">socials</b>!
+      <br>
+      <a href="https://github.com/kaine0x00" target="_blank"> <i class="fa fa-github"></i> </a>
+      <a href="https://github.com/kaine0x00" target="_blank"> <i class="fa fa-twitter"></i> </a>
+      <a href="https://www.linkedin.com/in/danny-robinson-romero-878122286/" target="_blank"> <i class="fa fa-linkedin-square"></i> </a>
+    </p>
+  </div>
+
   <!-- floating things -->
   <div id="profile" class="profile">
     <form>
@@ -372,7 +447,6 @@
       <button id="colourReset" name="colourReset"><i class="fa fa-times-circle-o"></i></button>
     </form>
   </div>
-
 </main>
 
 <a href="#title" class="backtotop">&uarr;</a>
